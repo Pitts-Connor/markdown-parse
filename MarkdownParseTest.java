@@ -21,4 +21,29 @@ public class MarkdownParseTest {
         assertEquals(MarkdownParse.getLinks(contents), expect);
             
     }
+
+    @Test
+    public void testMd2() throws IOException{
+        String contents= Files.readString(Path.of("/home/connor/Documents/GitHub/markdown-parse/test2.md"));
+        List<String> expect = List.of("https://duckduckgo.com", "https://kde.org");
+        assertEquals(MarkdownParse.getLinks(contents), expect);
+            
+    }
+
+    @Test
+    public void testMd3() throws IOException{
+        String contents= Files.readString(Path.of("/home/connor/Documents/GitHub/markdown-parse/test3.md"));
+        List<String> expect = List.of();
+        assertEquals(MarkdownParse.getLinks(contents), expect);
+            
+    }
+
+    @Test
+    public void testMd4() throws IOException{
+        String contents= Files.readString(Path.of("/home/connor/Documents/GitHub/markdown-parse/test4.md"));
+        List<String> expect = List.of();
+        assertEquals(MarkdownParse.getLinks(contents), expect);
+            
+    }
+
 }
