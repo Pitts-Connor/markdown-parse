@@ -61,11 +61,10 @@ public class MarkdownParseTest {  // class header
     }
 
     @Test
-    public void testFile5() throws IOException {
-        Path fileName = Path.of("/home/connor/Documents/GitHub/markdown-parse/test9-file.md");
-        String contents = Files.readString(fileName);
-        ArrayList<String> links = MarkdownParse.getLinks(contents);
-
-        assertEquals(List.of(), links);
+    public void mytest() throws IOException{
+        String contents= Files.readString(Path.of("/home/connor/Documents/GitHub/markdown-parse/test9-file.md"));
+        List<String> expect = List.of();
+        
+        assertEquals(MarkdownParse.getLinks(contents), expect);
     }
 }
